@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-website
+  labels:
+    app: custom-website
+    author: richa
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: custom-website
+  template:
+    metadata:
+      name: custom-website
+      labels:
+        app: custom-website
+        author: richa
+    spec:
+      containers:
+        - name: custom-website
+          image: richasrivastava15/k8s_app
